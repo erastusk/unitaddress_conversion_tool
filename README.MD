@@ -14,8 +14,8 @@
 
                 -------------------------------------------------------------------------------------
                 1.  Convert a single or txt file UA XXX-XXXXX-XXXXX-XXX to a DAC 0xXXXXXXXXXX format
-                        python <script> -ua-conv -s <ua>
-                        python <script> -ua-conv -f <file>
+                       a. python <script> -ua-conv -s <ua>
+                       b. python <script> -ua-conv -f <file>
 
                         Example, convert 000-01054-74710-173 to 0x0006496a96
                         python ua.py -ua-conv -s 000-01054-74710-173
@@ -25,8 +25,8 @@
 
                 -------------------------------------------------------------------------------------
                 2.      Convert a single or txt file  MAC XX:XX:XX:XX:XX to a UA XXX-XXXXX-XXXXX-XXX format
-                        python <script> -mac-conv -s <mac>
-                        python <script> -mac-conv -f <file>
+                        a. python <script> -mac-conv -s <mac>
+                        b. python <script> -mac-conv -f <file>
 
                         Example, convert 00:06:49:6a:96 to 000-01054-74710-173
                         python ua.py -mac-conv -s 00:06:49:6a:96
@@ -37,8 +37,8 @@
 
                 -------------------------------------------------------------------------------------
                 3.      Convert a single or txt file  UA XXX-XXXXX-XXXXX-XXX to a MAC XX:XX:XX:XX:XX format
-                        python <script> -ua-mac -s <mac>
-                        python <script> -ua-mac -f <file>
+                        a. python <script> -ua-mac -s <mac>
+                        b. python <script> -ua-mac -f <file>
 
                         Example, convert 000-01054-74710-173 to 00:06:49:6a:96
                         python ua.py -ua-mac -s 000-01054-74710-173
