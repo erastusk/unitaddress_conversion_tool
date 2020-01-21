@@ -68,48 +68,48 @@ def main_script():
         print(new_mac)
     elif sys.argv[1] == "-ua-conv" and sys.argv[2] == "-f" and len(sys.argv) == 4:
         txt_file = sys.argv[3]
-        file_ua = open(txt_file)
-        if path.exists(UARESFILE):
-            os.remove(UARESFILE)
-        file_res = open(UARESFILE, "w")
-        contents = file_ua.read()
+        read_file, res_file = file_open_func(txt_file, UARESFILE)
+        contents = read_file.read()
         file_as_list = contents.splitlines()
         for line in file_as_list:
             new_ua = gui_ua_to_dacdb_ua_conv(line)
-            file_res.write(new_ua + '\n')
-        file_res.close()
-        file_ua.close()
+            res_file.write(new_ua + '\n')
+        res_file.close()
+        read_file.close()
         print("output file: {}".format(UARESFILE))
     elif sys.argv[1] == "-mac-conv" and sys.argv[2] == "-f" and len(sys.argv) == 4:
         txt_file = sys.argv[3]
-        file_mac = open(txt_file)
-        if path.exists(MACRESFILE):
-            os.remove(MACRESFILE)
-        file_res = open(MACRESFILE, "w")
-        contents = file_mac.read()
+        read_file, res_file = file_open_func(txt_file, MACRESFILE)
+        contents = read_file.read()
         file_as_list = contents.splitlines()
         for line in file_as_list:
-            new_mac = mac_to_gui_ua_conv(line)
-            file_res.write(new_mac + '\n')
-        file_res.close()
-        file_mac.close()
+            new_ua = mac_to_gui_ua_conv(line)
+            res_file.write(new_ua + '\n')
+        res_file.close()
+        read_file.close()
         print("output file: {}".format(MACRESFILE))
     elif sys.argv[1] == "-ua-mac" and sys.argv[2] == "-f" and len(sys.argv) == 4:
         txt_file = sys.argv[3]
-        file_mac = open(txt_file)
-        if path.exists(UAMACFILE):
-            os.remove(UAMACFILE)
-        file_res = open(UAMACFILE, "w")
-        contents = file_mac.read()
+        read_file, res_file = file_open_func(txt_file, UAMACFILE)
+        contents = read_file.read()
         file_as_list = contents.splitlines()
         for line in file_as_list:
-            new_mac = gui_ua_to_mac_conv(line)
-            file_res.write(new_mac + '\n')
-        file_res.close()
-        file_mac.close()
+            new_ua = gui_ua_to_mac_conv(line)
+            res_file.write(new_ua + '\n')
+        res_file.close()
+        read_file.close()
         print("output file: {}".format(UAMACFILE))
     else:
         print(HELPFILE)
+
+
+def file_open_func(txt_file_to_open, if_exist_file):
+    """ Open read and results text files """
+    read_file = open(txt_file_to_open)
+    if path.exists(if_exist_file):
+        os.remove(if_exist_file)
+    res_file = open(if_exist_file, "w")
+    return (read_file, res_file)
 
 
 def gui_ua_to_dacdb_ua_conv(ua_in):
