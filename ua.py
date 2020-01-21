@@ -102,13 +102,20 @@ def main_script():
     else:
         print(HELPFILE)
 
-
 def file_open_func(txt_file_to_open, if_exist_file):
     """ Open read and results text files """
-    read_file = open(txt_file_to_open)
+    try:
+        read_file = open(txt_file_to_open)
+    except IOError:
+        print("COULD NOT OPEN GIVEN FILE: {}".format(txt_file_to_open))
+        sys.exit()
     if path.exists(if_exist_file):
         os.remove(if_exist_file)
-    res_file = open(if_exist_file, "w")
+    try:
+        res_file = open(if_exist_file, "w")
+    except IOError:
+        print("COULD NOT OPEN GIVEN FILE: {}".format(if_exist_file))
+        sys.exit()
     return (read_file, res_file)
 
 
