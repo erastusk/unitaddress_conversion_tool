@@ -5,6 +5,8 @@
 1.	Ensure the environment the script is ran from has python 2 or 3 installed.
 2.      crcccheck module is required, can be installed using pip as follows:
 		pip install crccheck
+	https://pypi.org/project/crccheck/
+	
 3.	If a UA or Mac address is valid, a NULL will be returned.
 
 
