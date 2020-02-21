@@ -73,7 +73,7 @@ def main_script():
         file_as_list = contents.splitlines()
         for line in file_as_list:
             new_ua = gui_ua_to_dacdb_ua_conv(line)
-            res_file.write(new_ua + '\n')
+            res_file.write(line + "," + new_ua + '\n')
         res_file.close()
         read_file.close()
         print("output file: {}".format(UARESFILE))
@@ -84,7 +84,7 @@ def main_script():
         file_as_list = contents.splitlines()
         for line in file_as_list:
             new_ua = mac_to_gui_ua_conv(line)
-            res_file.write(new_ua + '\n')
+            res_file.write(line + "," + new_ua + '\n')
         res_file.close()
         read_file.close()
         print("output file: {}".format(MACRESFILE))
@@ -95,7 +95,7 @@ def main_script():
         file_as_list = contents.splitlines()
         for line in file_as_list:
             new_ua = gui_ua_to_mac_conv(line)
-            res_file.write(new_ua + '\n')
+            res_file.write(line + "," + new_ua + '\n')
         res_file.close()
         read_file.close()
         print("output file: {}".format(UAMACFILE))
