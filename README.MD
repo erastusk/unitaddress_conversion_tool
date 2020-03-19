@@ -1,7 +1,7 @@
 # Unit Address to Mac Conversion Tool
 ## Use Case:
 Converting a STB Mac Address to a Unit Address or vice versa.
-Polynomial used to get the correct CRC is X^8 + X^7 + X^4 + X^3 + X + 1 - CRC-8/WCDMA
+Polynomial used to get the correct CRC is X^8 + X^7 + X^4 + X^3 + X + 1 - CRC-8/WCDMA.
 http://reveng.sourceforge.net/crc-catalogue/1-15.htm
 
 https://en.wikipedia.org/wiki/Cyclic_redundancy_check
